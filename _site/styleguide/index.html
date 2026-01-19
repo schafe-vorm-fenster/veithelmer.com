@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+<html lang="en" class="bg-black text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  <title>Component Library - Phase 6.2.2</title>
+  <meta name="title" content="Component Library - Phase 6.2.2">
+  <meta name="description" content="UI Component Library - Film Tiles, Buttons, and Controls">
+  <meta name="author" content="Veit Helmer">
+  <meta name="keywords" content="Veit Helmer, filmmaker, director, Tuvalu, Baikonur, The Bra, cinema, film">
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://schafe-vorm-fenster.github.io/veithelmer/styleguide/">
+  <meta property="og:title" content="Component Library - Phase 6.2.2">
+  <meta property="og:description" content="UI Component Library - Film Tiles, Buttons, and Controls">
+  
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Veit Helmer">
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://schafe-vorm-fenster.github.io/veithelmer/styleguide/">
+  <meta name="twitter:title" content="Component Library - Phase 6.2.2">
+  <meta name="twitter:description" content="UI Component Library - Film Tiles, Buttons, and Controls">
+  
+  
+  
+  <link rel="canonical" href="https://schafe-vorm-fenster.github.io/veithelmer/styleguide/">
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://schafe-vorm-fenster.github.io/veithelmer/styleguide/">
+  <link rel="alternate" hreflang="de" href="https://schafe-vorm-fenster.github.io/veithelmer/styleguide/">
+  <link rel="alternate" hreflang="x-default" href="https://schafe-vorm-fenster.github.io/veithelmer/en/">
+  
+  
+  <link rel="stylesheet" href="/veithelmer/css/main.css">
+  
+  
+  <link rel="preload" href="/veithelmer/assets/fonts/LeagueSpartan-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/veithelmer/assets/fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  
+  
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  
+  
+  
+</head>
+<body class="antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black">
+    Skip to main content
+  </a>
+  
+  <div id="app" class="min-h-screen flex flex-col">
+    
+
+
+
+
+
+
+
+<input type="checkbox" id="menu-toggle-desktop" class="hidden peer/desktop">
+<input type="checkbox" id="menu-toggle-mobile" class="hidden peer/mobile">
+
+
+<nav id="main-nav" class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm transition-shadow duration-300" role="navigation" aria-label="Main navigation">
+  <div class="container mx-auto max-w-6xl px-6 py-6">
+    <div class="flex items-center justify-between">
+      
+      <a href="/veithelmer/en/" class="no-underline block" aria-label="Veit Helmer - Home">
+        <img src="/veithelmer/assets/images/Veit-Helmer_Logo.svg" alt="VEIT HELMER" class="h-6 hover:opacity-80 transition-opacity duration-200">
+      </a>
+      
+      
+      <div class="hidden lg:flex items-center gap-8 text-sm uppercase tracking-wider">
+        
+        <label 
+          for="menu-toggle-desktop"
+          class="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+          aria-label="Open menu"
+        >
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </label>
+      </div>
+
+      
+      <label 
+        for="menu-toggle-mobile"
+        class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+        aria-label="Open menu"
+      >
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </label>
+    </div>
+  </div>
+</nav>
+
+
+<div class="fixed inset-y-0 right-0 w-[350px] max-w-[90vw] bg-black border-l border-gray-800 translate-x-full peer-checked/desktop:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto hidden lg:block">
+  <div class="p-8">
+    
+    <label 
+      for="menu-toggle-desktop"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+      aria-label="Close menu"
+    >
+      <span class="sr-only">Close</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </label>
+
+    
+    <div class="mb-8 pt-12">
+      <a href="/veithelmer/en/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Films</a>
+    </div>
+
+    
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="/veithelmer/en/biography/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Biography</a></li>
+        <li><a href="/veithelmer/en/workshops/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Workshops</a></li>
+        <li><a href="/veithelmer/en/commercials/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Commercials</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="/veithelmer/en/legal/contact/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Contact</a></li>
+        <li><a href="/veithelmer/en/legal/imprint/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Imprint</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="border-t border-gray-800 pt-6">
+      <a 
+        href="/veithelmer/styleguide/" 
+        class="text-lg font-medium hover:font-semibold transition-all inline-block no-underline"
+        hreflang="de"
+        aria-label="Wechseln zu Deutsch"
+      >
+        DE
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="lg:hidden fixed inset-0 bg-black translate-x-full peer-checked/mobile:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto">
+  <div class="p-8">
+    
+    <label 
+      for="menu-toggle-mobile"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+      aria-label="Close menu"
+    >
+      <span class="sr-only">Close</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </label>
+
+    
+    <div class="mb-8 pt-8 pb-6 border-b border-gray-800">
+      <a href="/veithelmer/en/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Films</a>
+    </div>
+
+    
+    <div class="mb-8 pt-6">
+      <ul class="space-y-3">
+        <li><a href="/veithelmer/en/biography/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Biography</a></li>
+        <li><a href="/veithelmer/en/workshops/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Workshops</a></li>
+        <li><a href="/veithelmer/en/commercials/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Commercials</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="/veithelmer/en/legal/contact/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Contact</a></li>
+        <li><a href="/veithelmer/en/legal/imprint/" class="text-lg font-medium hover:font-semibold transition-all no-underline">Imprint</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="border-t border-gray-800 pt-6">
+      <a 
+        href="/veithelmer/styleguide/" 
+        class="text-lg font-medium hover:font-semibold transition-all inline-block no-underline"
+        hreflang="de"
+        aria-label="Wechseln zu Deutsch"
+      >
+        DE
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<label for="menu-toggle-desktop" class="hidden peer-checked/desktop:block fixed inset-0 bg-black/50 z-40 cursor-pointer"></label>
+
+
+<main id="main-content" role="main" class="container mx-auto max-w-6xl px-6 py-12 flex-grow">
+  
+    
+
+
+
+
+<div class="space-y-20">
+  
+  
+  <section>
+    <h1 class="text-5xl font-bold mb-4">Component Library</h1>
+    <p class="text-xl opacity-80">Phase 6.2.2: Film Tiles, Buttons & Language Controls</p>
+    <p class="text-sm opacity-60 mt-2">Streaming service style UI components with hover interactions</p>
+  </section>
+
+  
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Film Tiles</h2>
+      <p class="opacity-80 mb-2">3:2 aspect ratio, borderless design with hover states</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Smooth scale-up to 105% on hover</li>
+        <li>✓ Z-index lift for layered effect</li>
+        <li>✓ Drop shadow appears on hover</li>
+        <li>✓ Title and year overlay on hover</li>
+        <li>✓ Optional category badge</li>
+      </ul>
+    </div>
+    
+    
+    <div class="p-8 border border-white/10 bg-white/5">
+      <h3 class="font-bold mb-6 text-sm uppercase tracking-wider opacity-60">Single Tile</h3>
+      <div class="max-w-sm">
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/tuvalu/" class="block no-underline" aria-label="View Tuvalu (1999)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu" 
+        alt="Tuvalu (1999)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Tuvalu</h3>
+      <p class="text-sm opacity-70">1999</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+      </div>
+    </div>
+    
+    
+    <div class="p-8 border border-white/10 bg-white/5">
+      <h3 class="font-bold mb-6 text-sm uppercase tracking-wider opacity-60">Grid Layout (Hover to see effects)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/tuvalu/" class="block no-underline" aria-label="View Tuvalu (1999)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu" 
+        alt="Tuvalu (1999)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Tuvalu</h3>
+      <p class="text-sm opacity-70">1999</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/absurdistan/" class="block no-underline" aria-label="View Absurdistan (2008)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Absurdistan" 
+        alt="Absurdistan (2008)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Absurdistan</h3>
+      <p class="text-sm opacity-70">2008</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/the-bra/" class="block no-underline" aria-label="View The Bra (2018)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=The+Bra" 
+        alt="The Bra (2018)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">The Bra</h3>
+      <p class="text-sm opacity-70">2018</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/baikonur/" class="block no-underline" aria-label="View Baikonur (2011)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Baikonur" 
+        alt="Baikonur (2011)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Baikonur</h3>
+      <p class="text-sm opacity-70">2011</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/behind-the-couch/" class="block no-underline" aria-label="View Behind the Couch (2003)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Behind+the+Couch" 
+        alt="Behind the Couch (2003)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Behind the Couch</h3>
+      <p class="text-sm opacity-70">2003</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/quatsch/" class="block no-underline" aria-label="View Quatsch (2004)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Quatsch" 
+        alt="Quatsch (2004)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Quatsch</h3>
+      <p class="text-sm opacity-70">2004</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Buttons & Controls</h2>
+      <p class="opacity-80 mb-2">Minimalist, icon-driven, monochrome buttons</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Icon-driven design with accessible labels</li>
+        <li>✓ Monochrome color scheme (black/white)</li>
+        <li>✓ Smooth hover transitions</li>
+        <li>✓ Focus states for keyboard navigation</li>
+      </ul>
+    </div>
+    
+    
+    <div class="p-8 border border-white/10 bg-white/5 space-y-6">
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Icon Buttons</h3>
+        <div class="flex items-center gap-4 flex-wrap">
+          
+  
+  
+  
+  
+  
+  
+  
+  
+    <a 
+      href="/films/" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-10 h-10 text-base no-underline"
+      aria-label="View films"
+      title="View films"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  
+
+
+          
+  
+  
+  
+  
+  
+  
+  
+  
+    <a 
+      href="/back/" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-10 h-10 text-base no-underline"
+      aria-label="Go back"
+      title="Go back"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </a>
+  
+
+
+          
+  
+  
+  
+  
+  
+  
+  
+  
+    <a 
+      href="/trailer/" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-12 h-12 text-lg no-underline"
+      aria-label="Play trailer"
+      title="Play trailer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    </a>
+  
+
+
+          
+  
+  
+  
+  
+  
+  
+  
+  
+    <button 
+      type="button"
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-10 h-10 text-base"
+      aria-label="Close"
+      title="Close"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  
+
+
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Button Sizes</h3>
+        <div class="flex items-center gap-4">
+          
+  
+  
+  
+  
+  
+    <a 
+      href="#" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-8 h-8 text-sm no-underline"
+      aria-label="Small info button"
+      title="Small info button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </a>
+  
+
+          
+  
+  
+  
+  
+  
+    <a 
+      href="#" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-10 h-10 text-base no-underline"
+      aria-label="Medium info button"
+      title="Medium info button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </a>
+  
+
+          
+  
+  
+  
+  
+  
+    <a 
+      href="#" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-12 h-12 text-lg no-underline"
+      aria-label="Large info button"
+      title="Large info button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </a>
+  
+
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Text Buttons</h3>
+        <div class="flex items-center gap-4 flex-wrap">
+          
+  <a 
+    href="/films/" 
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider border border-white/20 hover:bg-white hover:text-black transition-all duration-200 ease-out no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+  >
+    
+    <span>View All Films</span>
+  </a>
+
+          
+  <a 
+    href="/about/" 
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider border border-white/20 hover:bg-white hover:text-black transition-all duration-200 ease-out no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+  >
+    
+    <span>Learn More</span>
+  </a>
+
+          
+  <a 
+    href="/trailer/" 
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider border border-white/20 hover:bg-white hover:text-black transition-all duration-200 ease-out no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <span>Watch Trailer</span>
+  </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Language Toggle</h2>
+      <p class="opacity-80 mb-2">Bilingual site navigation (German/English)</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Clear active state indication</li>
+        <li>✓ Smooth transitions on hover</li>
+        <li>✓ Accessible with ARIA labels</li>
+      </ul>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5 space-y-8">
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Standard Toggle (German Active)</h3>
+        
+<nav class="language-toggle" aria-label="Language selection">
+  <ul class="flex items-center gap-1 text-sm font-bold uppercase">
+    <li>
+      <a 
+        href="/veithelmer/de/films/"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline text-white bg-white/10"
+        aria-label="Deutsch"
+        aria-current="true"
+      >
+        DE
+      </a>
+    </li>
+    <li class="text-white/30">|</li>
+    <li>
+      <a 
+        href="/veithelmer/en/films/"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline text-white/60 hover:text-white hover:bg-white/5"
+        aria-label="English"
+        
+      >
+        EN
+      </a>
+    </li>
+  </ul>
+</nav>
+
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Standard Toggle (English Active)</h3>
+        
+<nav class="language-toggle" aria-label="Language selection">
+  <ul class="flex items-center gap-1 text-sm font-bold uppercase">
+    <li>
+      <a 
+        href="/veithelmer/de/about/"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline text-white/60 hover:text-white hover:bg-white/5"
+        aria-label="Deutsch"
+        
+      >
+        DE
+      </a>
+    </li>
+    <li class="text-white/30">|</li>
+    <li>
+      <a 
+        href="/veithelmer/en/about/"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline text-white bg-white/10"
+        aria-label="English"
+        aria-current="true"
+      >
+        EN
+      </a>
+    </li>
+  </ul>
+</nav>
+
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Compact Toggle</h3>
+        
+<div class="language-toggle-compact inline-flex items-center gap-2 text-xs font-bold uppercase">
+  <a 
+    href="/veithelmer/de/"
+    class="transition-opacity duration-200 no-underline opacity-40 hover:opacity-70"
+    aria-label="Deutsch"
+  >
+    DE
+  </a>
+  <span class="opacity-30">/</span>
+  <a 
+    href="/veithelmer/en/"
+    class="transition-opacity duration-200 no-underline opacity-100"
+    aria-label="English"
+  >
+    EN
+  </a>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Combined Example</h2>
+      <p class="opacity-80">Film tiles with navigation buttons</p>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5 space-y-6">
+      
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Feature Films</h3>
+          <p class="text-sm opacity-60">Latest releases</p>
+        </div>
+        
+  
+  
+  
+  
+  
+  
+  
+  
+    <a 
+      href="/films/features/" 
+      class="inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-10 h-10 text-base no-underline"
+      aria-label="View all feature films"
+      title="View all feature films"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  
+
+
+      </div>
+      
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/the-bra/" class="block no-underline" aria-label="View The Bra (2018)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=The+Bra" 
+        alt="The Bra (2018)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">The Bra</h3>
+      <p class="text-sm opacity-70">2018</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/absurdistan/" class="block no-underline" aria-label="View Absurdistan (2008)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Absurdistan" 
+        alt="Absurdistan (2008)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Absurdistan</h3>
+      <p class="text-sm opacity-70">2008</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+        
+<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+  <a href="/films/tuvalu/" class="block no-underline" aria-label="View Tuvalu (1999)">
+    
+    
+    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
+      
+      
+      <img 
+        src="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu" 
+        alt="Tuvalu (1999)"
+        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+      
+    </div>
+    
+    
+    <div class="p-4 bg-brand-darkgray">
+      <h3 class="text-lg font-bold mb-1 tracking-tight">Tuvalu</h3>
+      <p class="text-sm opacity-70">1999</p>
+    </div>
+    
+  </a>
+  
+  
+  <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl"></div>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Interactive States</h2>
+      <p class="opacity-80">Hover and focus behaviors</p>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="pb-4 font-bold">Component</th>
+            <th class="pb-4 font-bold">Default</th>
+            <th class="pb-4 font-bold">Hover Effect</th>
+            <th class="pb-4 font-bold">Duration</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Film Tile</td>
+            <td class="py-4 opacity-60">Scale 100%, No shadow</td>
+            <td class="py-4 opacity-60">Scale 105%, Drop shadow, Overlay visible</td>
+            <td class="py-4 opacity-60">300ms ease-out</td>
+          </tr>
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Icon Button</td>
+            <td class="py-4 opacity-60">Black bg, White border</td>
+            <td class="py-4 opacity-60">White bg, Black text</td>
+            <td class="py-4 opacity-60">200ms ease-out</td>
+          </tr>
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Text Button</td>
+            <td class="py-4 opacity-60">Transparent bg, White text</td>
+            <td class="py-4 opacity-60">White bg, Black text</td>
+            <td class="py-4 opacity-60">200ms ease-out</td>
+          </tr>
+          <tr>
+            <td class="py-4 font-bold">Language Toggle</td>
+            <td class="py-4 opacity-60">60% opacity inactive</td>
+            <td class="py-4 opacity-60">100% opacity, Subtle bg</td>
+            <td class="py-4 opacity-60">200ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  
+  <section class="space-y-6 p-8 border border-white/10 bg-white/5">
+    <h2 class="text-3xl font-bold mb-4">✅ Phase 6.2.2 Complete</h2>
+    
+    <div class="space-y-4">
+      <div>
+        <h3 class="font-bold mb-2">Film Tile Component</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ 3:2 aspect ratio (as specified)</li>
+          <li>✓ Borderless design</li>
+          <li>✓ 105% scale on hover with smooth transition</li>
+          <li>✓ Z-index lift for layered effect</li>
+          <li>✓ Drop shadow on hover</li>
+          <li>✓ Title and year overlay appear on hover</li>
+          <li>✓ Optional category badge</li>
+          <li>✓ Accessible with proper ARIA labels</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-2">Button Components</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ Icon-driven design</li>
+          <li>✓ Monochrome color scheme</li>
+          <li>✓ Multiple sizes (sm, md, lg)</li>
+          <li>✓ Invert colors on hover (black → white)</li>
+          <li>✓ Focus states with ring indicator</li>
+          <li>✓ Accessible labels and titles</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-2">Language Toggle</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ Standard and compact variants</li>
+          <li>✓ Clear active state indication</li>
+          <li>✓ Smooth hover transitions</li>
+          <li>✓ ARIA labels for accessibility</li>
+          <li>✓ Current page context support</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-6 p-4 bg-black/50">
+      <p class="text-sm opacity-60 mb-2">Component Files:</p>
+      <code class="text-xs font-mono block space-y-1">
+        <div>src/_includes/macros/filmTile.njk</div>
+        <div>src/_includes/macros/buttons.njk</div>
+        <div>src/_includes/macros/languageToggle.njk</div>
+        <div>src/css/main.css (component styles)</div>
+      </code>
+    </div>
+  </section>
+
+</div>
+
+  
+</main>
+
+
+<footer role="contentinfo" class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
+  <div class="container mx-auto max-w-6xl">
+    <p>&copy; 2026 Veit Helmer. All rights reserved.</p>
+    
+  </div>
+</footer>
+
+  </div>
+  
+  
+  <script type="module" src="/veithelmer/js/main.js"></script>
+  
+  
+  
+</body>
+</html>
