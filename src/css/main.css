@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+/* ============================================
+ * Veit Helmer Minimalist Design System
+ * Phase 6.1.2: Brand Identity
+ * ============================================ */
+
+/* Noto Sans - Local Font Files */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../assets/fonts/NotoSans-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/NotoSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/NotoSans-Bold.woff2') format('woff2');
+}
+
+/* Design Tokens Extracted from Legacy Assets
+ * Source: legacy/directors-website/styles/custom.css
+ * Documentation: See DESIGN_TOKENS.md for full reference
+ */
+
+@theme {
+  /* Core Brand Colors - Minimalist Palette */
+  --color-brand-black: #000;
+  --color-brand-white: #fff;
+  
+  /* Extended Palette - Legacy Support */
+  --color-brand-darkgray: #0a0a0a;
+  --color-brand-red: #8b1a1a;
+  --color-brand-lightgray: #eee;
+  --color-brand-mediumgray: #ccc;
+  --color-brand-charcoal: #333;
+  
+  /* Typography */
+  --font-sans: 'Noto Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  
+  /* Effects */
+  --shadow-base: -1px 0 8px 2px rgba(0, 0, 0, 0.58);
+  --overlay-light: rgba(255, 255, 255, 0.2);
+  --overlay-medium: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+ * Base Typography & Layout
+ * ============================================ */
+
+@layer base {
+  html {
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-black text-white;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    @apply text-white underline;
+    text-underline-offset: 0.2em;
+    transition: opacity 0.2s ease;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+  }
+  
+  strong, b {
+    font-weight: 700;
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  /* Content page typography */
+  #main-content h1 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #main-content h1:first-child {
+    margin-top: 0;
+  }
+  
+  #main-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #main-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  #main-content hr {
+    display: none;
+  }
+  
+  #main-content p {
+    margin-bottom: 1rem;
+  }
+  
+  #main-content table {
+    margin: 1.5rem 0;
+  }
+  
+  /* Consistent h2 styling in film detail information grid */
+  #main-content section.information-grid h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+  }
+  
+  /* Cinema poster height constraint - match left column height */
+  @media (min-width: 768px) {
+    .quick-info-wrapper {
+      position: relative;
+    }
+    
+    /* Right column: absolute positioning so it doesn't affect row height */
+    .quick-info-wrapper > aside.cinema-poster-aside {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(33.333% - 2rem); /* 1/3 width minus gap */
+      overflow: hidden;
+    }
+    
+    .quick-info-wrapper > aside.cinema-poster-aside > img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: top left;
+    }
+  }
+  
+  .max-w-prose-wide {
+    max-width: 65ch;
+  }
+  
+  #main-nav {
+    box-shadow: none;
+  }
+}
+
+/* ============================================
+ * Component Styles - Phase 6.2.2
+ * Film Tiles & Interactive Components
+ * ============================================ */
+
+@layer components {
+  /* Film Tile Component */
+  .film-tile {
+    position: relative;
+    border-radius: 0; /* Borderless as per spec */
+  }
+  
+  .film-tile:hover {
+    /* Drop shadow on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 
+                0 10px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Ensure smooth transitions for all interactive elements */
+  .film-tile,
+  .film-tile img,
+  .film-tile a {
+    transition-property: transform, opacity, box-shadow, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Video Player Component - Phase 6.2.3 (Native) */
+  .video-player-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .video-player {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Play overlay button */
+  .play-overlay {
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Horizontal Scroll Navigation Arrows */
+  .scroll-nav-wrapper {
+    position: relative;
+  }
+  
+  .scroll-nav-btn {
+    position: absolute;
+    top: 7rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.1rem;
+    z-index: 10;
+    pointer-events: auto;
+  }
+  
+  .scroll-nav-btn-prev {
+    left: 0;
+  }
+  
+  .scroll-nav-btn-next {
+    right: 0;
+  }
+  
+  .scroll-nav-btn:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+  }
+  
+  .scroll-nav-btn:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+  
+  .scroll-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 1024px) {
+    .scroll-nav-btn {
+      display: none !important;
+    }
+  }
+}

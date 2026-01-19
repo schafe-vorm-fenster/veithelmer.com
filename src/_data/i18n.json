@@ -1,0 +1,76 @@
+{
+  "en": {
+    "locale": "en",
+    "lang": "en",
+    "dir": "/en/",
+    "label": "English",
+    "nav": {
+      "features": "Features",
+      "documentaries": "Documentaries",
+      "shorts": "Shorts",
+      "home": "Home",
+      "films": "Films",
+      "pages": "About",
+      "biography": "Biography",
+      "workshops": "Workshops",
+      "commercials": "Commercials",
+      "shop": "Shop",
+      "legal": "Legal",
+      "contact": "Contact",
+      "imprint": "Imprint",
+      "language": "Language",
+      "switchTo": "Switch to"
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "backToArchive": "Back to Film Overview"
+    },
+    "film": {
+      "synopsis": "Synopsis",
+      "details": "Details",
+      "director": "Director",
+      "cast": "Cast",
+      "crew": "Crew",
+      "technical": "Technical",
+      "awards": "Awards",
+      "visitMicrosite": "Visit Microsite"
+    }
+  },
+  "de": {
+    "locale": "de",
+    "lang": "de",
+    "dir": "/de/",
+    "label": "Deutsch",
+    "nav": {
+      "features": "Spielfilme",
+      "documentaries": "Dokumentarfilme",
+      "shorts": "Kurzfilme",
+      "home": "Startseite",
+      "films": "Filme",
+      "pages": "Infos",
+      "biography": "Biografie",
+      "workshops": "Workshops",
+      "commercials": "Werbespots",
+      "shop": "Shop",
+      "legal": "Rechtliches",
+      "contact": "Kontakt",
+      "imprint": "Impressum",
+      "language": "Sprache",
+      "switchTo": "Wechseln zu"
+    },
+    "footer": {
+      "copyright": "Alle Rechte vorbehalten.",
+      "backToArchive": "Zurück zur Filmübersicht"
+    },
+    "film": {
+      "synopsis": "Synopsis",
+      "details": "Details",
+      "director": "Regie",
+      "cast": "Besetzung",
+      "crew": "Team",
+      "technical": "Technisch",
+      "awards": "Auszeichnungen",
+      "visitMicrosite": "Zur Microsite"
+    }
+  }
+}

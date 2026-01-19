@@ -1,0 +1,148 @@
+{% set currentLocale = locale or page | getLocale %}
+{% set alternateLocale = 'de' if currentLocale == 'en' else 'en' %}
+
+{# Hidden checkboxes for menu state (CSS-only approach) #}
+<input type="checkbox" id="menu-toggle-desktop" class="hidden peer/desktop">
+<input type="checkbox" id="menu-toggle-mobile" class="hidden peer/mobile">
+
+{# Sticky Top Navigation #}
+<nav id="main-nav" class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm transition-shadow duration-300" role="navigation" aria-label="Main navigation">
+  <div class="container mx-auto max-w-6xl px-6 py-6">
+    <div class="flex items-center justify-between">
+      {# Logo - Left #}
+      <a href="{{ ('/' + currentLocale + '/') | url }}" class="no-underline block" aria-label="Veit Helmer - Home">
+        <img src="{{ '/assets/images/Veit-Helmer_Logo.svg' | url }}" alt="VEIT HELMER" class="h-6 hover:opacity-80 transition-opacity duration-200">
+      </a>
+      
+      {# Desktop Navigation - Right #}
+      <div class="hidden lg:flex items-center gap-8 text-sm uppercase tracking-wider">
+        {# Burger Menu Button - Desktop #}
+        <label 
+          for="menu-toggle-desktop"
+          class="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+          aria-label="Open menu"
+        >
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </label>
+      </div>
+
+      {# Mobile Burger Menu Button #}
+      <label 
+        for="menu-toggle-mobile"
+        class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+        aria-label="Open menu"
+      >
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </label>
+    </div>
+  </div>
+</nav>
+
+{# Desktop Burger Menu - Right Panel #}
+<div class="fixed inset-y-0 right-0 w-[350px] max-w-[90vw] bg-black border-l border-gray-800 translate-x-full peer-checked/desktop:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto hidden lg:block">
+  <div class="p-8">
+    {# Close Button #}
+    <label 
+      for="menu-toggle-desktop"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+      aria-label="Close menu"
+    >
+      <span class="sr-only">Close</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </label>
+
+    {# Films Link #}
+    <div class="mb-8 pt-12">
+      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
+    </div>
+
+    {# Pages Section #}
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
+      </ul>
+    </div>
+
+    {# Legal Section #}
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
+      </ul>
+    </div>
+
+    {# Language Section #}
+    <div class="border-t border-gray-800 pt-6">
+      <a 
+        href="{{ page.url | alternateUrl(alternateLocale) }}" 
+        class="text-lg font-medium hover:font-semibold transition-all inline-block no-underline"
+        hreflang="{{ alternateLocale }}"
+        aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
+      >
+        {{ alternateLocale | upper }}
+      </a>
+    </div>
+  </div>
+</div>
+
+{# Mobile Burger Menu - Full Screen #}
+<div class="lg:hidden fixed inset-0 bg-black translate-x-full peer-checked/mobile:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto">
+  <div class="p-8">
+    {# Close Button #}
+    <label 
+      for="menu-toggle-mobile"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
+      aria-label="Close menu"
+    >
+      <span class="sr-only">Close</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </label>
+
+    {# Films Link #}
+    <div class="mb-8 pt-8 pb-6 border-b border-gray-800">
+      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
+    </div>
+
+    {# Pages Section #}
+    <div class="mb-8 pt-6">
+      <ul class="space-y-3">
+        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
+      </ul>
+    </div>
+
+    {# Legal Section #}
+    <div class="mb-8 border-t border-gray-800 pt-6">
+      <ul class="space-y-3">
+        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg font-medium hover:font-semibold transition-all no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
+      </ul>
+    </div>
+
+    {# Language Section #}
+    <div class="border-t border-gray-800 pt-6">
+      <a 
+        href="{{ page.url | alternateUrl(alternateLocale) }}" 
+        class="text-lg font-medium hover:font-semibold transition-all inline-block no-underline"
+        hreflang="{{ alternateLocale }}"
+        aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
+      >
+        {{ alternateLocale | upper }}
+      </a>
+    </div>
+  </div>
+</div>
+
+{# Overlay for desktop menu #}
+<label for="menu-toggle-desktop" class="hidden peer-checked/desktop:block fixed inset-0 bg-black/50 z-40 cursor-pointer"></label>

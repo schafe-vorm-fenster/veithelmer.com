@@ -1,0 +1,40 @@
+{
+  "name": "veithelmer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve",
+    "start": "npm run dev",
+    "kanban:start": "./scripts/start-services.sh",
+    "kanban:kill": "./scripts/kill-services.sh",
+    "kanban:restart": "pnpm kanban:kill && pnpm kanban:start",
+    "kanban:check": "./scripts/check-status.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schafe-vorm-fenster/veithelmer.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/schafe-vorm-fenster/veithelmer.com/issues"
+  },
+  "homepage": "https://github.com/schafe-vorm-fenster/veithelmer.com#readme",
+  "packageManager": "pnpm@10.27.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/postcss": "^4.1.18",
+    "glob": "^13.0.0",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.14.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.18"
+  }
+}
